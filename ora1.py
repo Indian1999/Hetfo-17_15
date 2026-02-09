@@ -36,4 +36,27 @@ else:
     print("Hajadon vagy.")
 
 
+name = input("Add meg a neved: ")
+
+print("Szia " + name + "!")
+
+year = input("Add meg, hogy mikor születtél (évszám): ")
+print(type(year)) # <class 'str'> az input függvény, mindig stringet ad vissza
+year = int(year) # Felülírjuk a year változót az int-té konvertált verziójával
+print(type(year)) # <class 'int'>
+age = 2026 - year
+print(str(age) + " éves vagy!")
+print(age, "éves vagy!")
+
+print("""Ez itt egy több
+    sorból álló print függvény,
+ami több sorba fogja kiírni
+az eredményt a kimenetre.""")
+
+# Tripla időzejelekkel írható több soros komment
+"""
+a = 5
+b = 10
+print(a + b)
+"""
 
