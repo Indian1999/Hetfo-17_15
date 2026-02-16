@@ -59,13 +59,58 @@ print(f"A story-ban {story_lower.count('a')} 'a' betű szerepel.")
 
 
 # 1. feladat: Kérj be a felhasználótól egy nevet, majd írd, ki hogy hány karakterből áll.
+#name = input("Add meg a neved: ")
+print(f"A neved {len(name)} karakterből áll")
 
 # 2. feladat: Kérj be egy mondatot, és számold meg, hogy hány szóból áll
+#mondat = input("Írj egy mondatot: ")
+mondat = "sad"
+print(f"A mondatod {mondat.count(' ') + 1} szóból áll.")
 
 # 3. feladat: Kérj be egy számot és írd ki az ötszörösét! Ha nem számot írt be a felhasználó, ne crasheljen ki a program!
+
+#number2 = input("Adj meg egy számot:")
+number2 = "32"
+if number2.isdecimal():
+   number2 = int(number2)
+   print(5*number2)
+else:
+    print("Ez nem egy szám!")
 
 # 4. feladat: Kérj be egy e-mail címet, és döntsd el, hogy megfelelő-e!
 # Tartalmaznia kell '@' és '.'
 # betűvel kell kezdődnie és végződnie is
+#email = input("Add meg az emailedet: ")
+email = "asd@asd.hu"
+if email.find("@") != -1 and email.find(".") != -1 and email[0].isalpha() and email[-1].isalpha():
+    print("Jó e-mail cím.")
+else:
+    print("Rossz e-mail cím")
 
 # 5. feladat: Kérj be egy mondatot és számold meg, hogy hány 'e' betűvel kezdődő szó van benne!
+
+mondat = "Eme hely neve Epres eredmények kertje, melnyek helye Debrecen, eme elme eleresztette ezt."
+mondat = mondat.lower()
+e_szo = mondat.count(" e")
+if mondat.startswith("e"):
+    e_szo += 1
+print(e_szo)
+
+###########################
+#       ELÁGAZÁSOK        #
+###########################
+
+# if, elif, else
+
+if 8 > 3:
+    print("Bizony, a 8 nagyobb mint a 3.")
+else:
+    print("A 8 nem nagyobb mint a 3")
+
+a = 0
+if a > 0:
+    print(f"{a} egy pozitív szám.")
+elif a < 0:
+    print(f"{a} egy negatív szám.")
+else:
+    print(f"{a} = 0")
