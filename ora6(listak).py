@@ -81,7 +81,7 @@ else:
 
 # Feladat: Adott egy lista ami egy osztály tanulóinak a magasságát tartalmazza.
 
-magassagok = [157, 182, 190, 167, 180, 183, 177, 150, 148, 199, 187, 188, 152, 187]
+magassagok = [157, 182, 190, 167, 180, 183, 177, 150, 148, 199, 187, 188, 205, 187]
 print("Magasságok:", magassagok)
 
 # Hány tanuló van az osztályban?
@@ -98,7 +98,36 @@ while i < len(magassagok):
 print(f"A legmagasabb diák {magassagok[max_index]} cm magas. A lista {max_index}. indexén található.")
 
 # Mekkora az átlagos magasság? (Egész értékekre kerekíts!)
+összeg = 0
+i = 0
+while i < len(magassagok):
+    összeg += magassagok[i]
+    i += 1
+
+atlag = összeg / len(magassagok)
+print(f"Az osztály átlagos magassága {round(atlag)} cm.")
 
 # Hány cm magas a legalacsonyabb diák?
+min_index = 0
+i = 1
+while i < len(magassagok):
+    if magassagok[min_index] > magassagok[i]:
+        min_index = i
+    i += 1
+
+print(f"A legalacsonyabb diák {magassagok[min_index]} cm magas. A lista {min_index}. indexén található.")
 
 # Van-e 2 métertől magasabb diák az osztályban?
+
+van_magasabb = False
+i = 0
+while i < len(magassagok):
+    if magassagok[i] > 200:
+        van_magasabb = True
+        break
+    i += 1
+
+if van_magasabb:
+    print("Van 2 métertől magasabb tanuló.")
+else:
+    print("Nincs 2 métertől magasabb tanuló.")
