@@ -105,7 +105,35 @@ print(kódolt) # Acc emsotafr iaflázt  áa
 
 kódolt = "A nksuó eé zn sngo zrtm etnmfkt mtnmseee.zé iatmfhrsíűé aynseee,mr e eeeai e zrtk"
 dekódolt = ""
+fele = len(kódolt) // 2
+print(f"Kódolt szöveg hossza: {len(kódolt)}") # 81
+print(f"A fele: {fele}") # 40
 
-
+for i in range(len(kódolt) // 2):
+    dekódolt += kódolt[i] + kódolt[i + fele + 1]
 
 print(dekódolt)
+
+
+
+# Caeaser kódolás
+
+szöveg = "óo sz wüfóhgáy trúsé foűzj sf zóunaz forérgry, yrég zry trwrgr óyüg zry forérgrw."
+
+abc = "aábcdeéfghiíjklmnoóöőpqrstuúüűvwxyz"
+
+# ctrl + alt + le
+# alt + katt
+for eltolás in range(1, len(abc)):
+    kódolt = ""
+    for char in szöveg.lower():
+        hanyadik = 0
+        for i in range(len(abc)):
+            if char == abc[i]:
+                hanyadik = i
+        if char in abc:
+            kódolt += abc[(hanyadik + eltolás) % len(abc)]
+        else:
+            kódolt += char
+    print(kódolt)
+
