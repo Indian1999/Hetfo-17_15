@@ -67,11 +67,16 @@ def check_board():
         return board[1][1]
     return None
     
+
+mode = input("1 vagy 2 játékos mód legen?\n")
+against_computer = False
+if mode == "1":
+    against_computer = True
 # Addig meg a játék, amíg valaki nem nyer, vagy döntetlen, nem lesz
 while gameOn:
     print()
     draw_board()
-    if player_1_turn:
+    if player_1_turn or not against_computer:
         row, col = read_input()
     else:
         row, col = computer_input()
