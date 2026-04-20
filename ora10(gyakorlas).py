@@ -23,7 +23,18 @@ if mode == "1":
     else:
         print("Érvénytelen menüpont")
 elif mode == "2":
-    pass
+    print("Miből mibe szeretnél váltani?")
+    print("1: Kilométerből mérföldbe")
+    print("2: Mérföldből kilométerbe")
+    mode2 = input("Add meg a menüpont számát: ")
+    if mode2 == "1":
+        km = float(input("km = "))
+        print(f"{km} km = {km * 0.62137} mi")
+    elif mode2 == "2":
+        mi = float(input("mi = "))
+        print(f"{mi} mi = {mi / 0.62137} km")
+    else:
+        print("Érvénytelen menüpont")
 elif mode == "3":
     print("Miből mibe szeretnél váltani?")
     print("1: C°-ból F°-be")
