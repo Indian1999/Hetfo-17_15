@@ -116,6 +116,7 @@ def sum_until(n):
         összeg += i
     return összeg
 
+
 print(f"Az első 20 természetes szám összege: {sum_until(20)}")
 
 
