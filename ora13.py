@@ -145,9 +145,6 @@ for i in range(len(times)):
 
 
 
-
-
-
 # Task 9 - getting information from a person
 name = ["Bob", "Wanda", "Jared", "Emma", "Lisa", "Fred", "George", "Noah", "Rachel"]
 age = [26, 31, 35, 41, 58, 30, 46, 61, 25]
