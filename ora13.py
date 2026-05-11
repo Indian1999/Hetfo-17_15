@@ -64,10 +64,7 @@ for item in kosar:
 print(f"A kosár tartalma: {kosar}")
 print(f"Végösszeg: {vegosszeg} Ft.")
 
-
-
-
-# Task 8 - price of the translation
+# Task 8 - Mennyi a szavak száma ebben a stringben?
 string = """Mr. and Mrs. Dursley, of number four, Privet Drive, were proud to say that they were perfectly
 normal, thank you very much. They were the last people you’d expect to be involved in anything
 strange or mysterious, because they just didn’t hold with such nonsense.
@@ -76,23 +73,80 @@ man with hardly any neck, although he did have a very large mustache. Mrs. Dursl
 and blonde and had nearly twice the usual amount of neck, which came in very useful as she
 spent so much of her time craning over garden fences, spying on the neighbors. The Dursleys
 had a small son called Dudley and in their opinion there was no finer boy anywhere.
- The Dursleys had everything they wanted, but they also had a secret, and their greatest fear was
-that somebody would discover it. They didn’t think they could bear it if anyone found out about
-the Potters. Mrs. Potter was Mrs. Dursley’s sister, but they hadn’t met for several years; in fact,
-Mrs. Dursley pretended she didn’t have a sister, because her sister and her good-for-nothing
-husband were as unDursleyish as it was possible to be. The Dursleys shuddered to think what the
-neighbors would say if the Potters arrived in the street. The Dursleys knew that the Potters had a
-small son, too, but they had never even seen him. This boy was another good reason for keeping
-the Potters away; they didn’t want Dudley mixing with a child like that.
- When Mr. and Mrs. Dursley woke up on the dull, gray Tuesday our story starts, there was
-nothing about the cloudy sky outside to suggest that strange and mysterious things would soon be
-happening all over the country. Mr. Dursley hummed as he picked out his most boring tie for
-work, and Mrs. Dursley gossiped away happily as she wrestled a screaming Dudley into his high
-chair.
  None of them noticed a large, tawny owl flutter past the window.
  At half past eight, Mr. Dursley picked up his briefcase, pecked Mrs. Dursley on the cheek, and
-tried to kiss Dudley good-bye but missed, because Dudley was now having a tantrum and
+tried to kiss Dudley good-bye but missed,                 because Dudley was now having a tantrum and
 throwing his cereal at the walls. """
+
+string = string.replace("\n", " ")  # Entereket szóközre cseréli
+string = string.strip() # Az elejéről és a végéről törli a whitespace (szóköz, enter, tab) karaktereket
+while "  " in string:
+    string = string.replace("  ", " ")
+szavak_szama = string.count(" ") + 1
+print(f"A szavak száma a szövegben: {szavak_szama}")
+
+
+# Task 4 - Ellenőrizzük le, hogy egy lista rendezett e (növekvő vagy csökkenő)
+list = [43, 70, 25, 39, 15, 85, 42, 94, 11, 76, 20,  36, 48]
+list = [12, 16, 22, 28, 33, 36, 40, 48, 85, 88, 90, 95, 99]
+
+ascending = True
+descending = True
+for i in range(len(list)-1):
+    if list[i] < list[i+1]:
+        descending = False
+    if list[i] > list[i+1]:
+        ascending = False
+
+if ascending:
+    print("növekvő")
+elif descending:
+    print("csökkenő")
+else:
+    print("nem rendezett")
+
+# Task 6 - 100. Fibonacci number
+# 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+a = 1
+b = 1
+for i in range(98):
+    a, b = b, a + b
+print(f"A 100. fibonacci szám: {b}")
+
+# Task 7 - 400m running results
+names = ["Bob", "Wanda", "Jared", "Emma", "Lisa", "Fred", "George", "Noah", "Rachel"]
+times = [123.42, 67.15, 80.70, 118.40, 99.95, 68.22, 71.51, 102.68, 80.88]
+
+# Ki nyerte a versenyt? Milyen időt futott?
+min_index = 0
+for i in range(len(times)):
+    if times[i] < times[min_index]:
+        min_index = i
+print(f"A versenyt {names[min_index]} nyerte, {times[min_index]} mp-es időeredménnyel.")
+
+# Mennyi idő alatt futották le a távot átlagosan?
+összeg = 0
+for item in times:
+    összeg += item
+atlag = összeg / len(times)
+print(f"Az időeredmények átlaga: {round(atlag, 2)}")
+
+# Kik azok a versenyzők akik több mint másfél perc alatt teljesítették a távot? (az idejüket is írd ki)
+print("Másfél perctől lassabbak:")
+for i in range(len(times)):
+    if times[i] > 90:
+        print(f"{names[i]} - {times[i]} mp")
+
+# Kik voltak azok, akik az átlagtól jobb eredményt értek el?
+print("Az átlagtól gyorsabbak:")
+for i in range(len(times)):
+    if times[i] < atlag:
+        print(f"{names[i]} - {times[i]} mp")
+
+
+
+
+
 
 # Task 9 - getting information from a person
 name = ["Bob", "Wanda", "Jared", "Emma", "Lisa", "Fred", "George", "Noah", "Rachel"]
@@ -100,19 +154,3 @@ age = [26, 31, 35, 41, 58, 30, 46, 61, 25]
 gender = ["male", "female", "male", "female", "female", "male", "male", "male", "female"]
 job = ["web developer", "marketing director", "content creator", "human resources", "CEO", "software developer", "public relations manager", "tester", "sales representative"]
 salary = [1500, 1500, 1400, 1300, 1400, 1500, 1400, 1300, 1500]
-
-
-
-
-
-
-
-
-# Task 4 - Ellenőrizzük le, hogy egy lista rendezett e (növekvő vagy csökkenő)
-list = [43, 70, 25, 39, 15, 85, 42, 94, 11, 76, 20,  36, 48]
-
-# Task 6 - 100. Fibonacci number
-
-# Task 7 - 400m running results
-names = ["Bob", "Wanda", "Jared", "Emma", "Lisa", "Fred", "George", "Noah", "Rachel"]
-times = [123.42, 67.15, 80.70, 118.40, 99.95, 68.22, 71.51, 102.68, 80.88]
