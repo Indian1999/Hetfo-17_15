@@ -67,8 +67,6 @@ print(is_anagramm("török")) # False
 print(is_anagramm("Indul a görög aludni.")) # False
 print(is_anagramm(clean_text("Indul a görög aludni."))) # True
 
-
-
 # 3. feladat: Kik lassítsanak?
 speed = [96, 98, 72, 64, 93, 61, 95, 78, 54, 51, 52, 55, 47, 70, 68, 67, 79, 83, 59, 76, 45, 82, 87, 66, 89, 62, 69, 74, 75, 48, 88, 81, 86, 97, 94, 71, 46, 57, 50, 53]
 
@@ -76,3 +74,22 @@ speed = [96, 98, 72, 64, 93, 61, 95, 78, 54, 51, 52, 55, 47, 70, 68, 67, 79, 83,
 # 4. feladat: Szavazás eredménye
 burgers = ["Spicy Pinata", "Cheesy Dream", "Vegan Fluffy", "Fatty Boom", "Tortuga", "Pork Pie"]
 votes = [95061, 93439, 98563, 90478, 90915, 97334]
+
+# Melyik burger nyerte a szavazást, hány szavazattal?
+max_index = 0
+for i in range(1, len(votes)):
+    if votes[i] > votes[max_index]:
+        max_index = i
+
+print(f"A szavazást a {burgers[max_index]} burger nyerte, {votes[max_index]} szavazattal.")
+
+# Átlagosan hány szavazatot kapott egy burger?
+összeg = 0
+for i in range(len(votes)):
+    összeg += votes[i]
+átlag = összeg / len(votes)
+print(f"Egy burger átlagosan {round(átlag)} szavazatot kapott.")
+
+# Melyik burger kapta a legkevesebb szavazatot? (és hányat)
+
+# Melyek azok a burgerek, amelyek az átlagtól kevesebb szavazatot kaptak?
