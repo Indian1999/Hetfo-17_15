@@ -91,5 +91,15 @@ for i in range(len(votes)):
 print(f"Egy burger átlagosan {round(átlag)} szavazatot kapott.")
 
 # Melyik burger kapta a legkevesebb szavazatot? (és hányat)
+min_index = 0
+for i in range(1, len(votes)):
+    if votes[i] < votes[min_index]:
+        min_index = i
+
+print(f"A szavazáson a {burgers[min_index]} burger kapta a legkevesebb szavazatot, {votes[min_index]}-t.")
 
 # Melyek azok a burgerek, amelyek az átlagtól kevesebb szavazatot kaptak?
+print("Az átlagtól kevesebb szavazatot kapott burgerek a következők:")
+for i in range(len(votes)):
+    if votes[i] < átlag:
+        print(f"{burgers[i]} - {votes[i]} szavazat")
