@@ -61,11 +61,32 @@ print(nevek)
 print(kártyák)
 
 # Átlagosan hány kártyája van egy embernek?
+összeg = 0
+for i in range(len(nevek)):
+    összeg += kártyák[i]
+átlag = összeg / len(kártyák)
+print(f"Egy embernek átlagosan {round(átlag)} kártyája van.")
 
 # Kinek van a legtöbb kártyája (és mennyi)?
+max_index = 0
+for i in range(1, len(nevek)):
+    if kártyák[i] > kártyák[max_index]:
+        max_index = i
+
+print(f"A legtöbb kártyáka {nevek[max_index]}-nek van. {kártyák[max_index]} kártyával.")
 
 # Készítsünk 2 új listát, az egyikben azoknak a nevei legyen, akiknek az átlagtól kevesebb,
 # a másikban azok nevei akiknek az átlagtól több kártyájuk van.
+kevesebb = []
+több = []
+for i in range(len(nevek)):
+    if kártyák[i] < átlag:
+        kevesebb.append(nevek[i])
+    else:
+        több.append(nevek[i])
+
+print("Átlag alattiak:", kevesebb)
+print("Átlag felettiek:", több)
 
 # Kik azok akiknek a kártyáit egyenlően el- lehet osztani 4 felé?
 print("Azok az emberek akiknek a kártyáit 4 felé lehet osztani:")
