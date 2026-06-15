@@ -7,7 +7,6 @@
 5, 9: Bináris egyenlet  -> 6
 """
 
-
 gameOn = True
 rooms = []
 items = []

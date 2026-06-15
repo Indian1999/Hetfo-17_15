@@ -7,3 +7,5 @@ print("Szia!\tHello!")
 print("Szia!\\nello!")
 print("Szia!\"Hello!\"")
 print()
+
+# ctrl + alt + le
